@@ -340,7 +340,7 @@ func (c *Client) CreateChatCompletion(
 	}
 
 	urlSuffix := chatCompletionsSuffix
-	if !checkEndpointSupportsModel(urlSuffix, request.Model) {
+	if c.config.checkAIMode && !checkEndpointSupportsModel(urlSuffix, request.Model) {
 		err = ErrChatCompletionInvalidModel
 		return
 	}
