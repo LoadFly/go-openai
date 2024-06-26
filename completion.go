@@ -196,7 +196,7 @@ func (c *Client) CreateCompletion(
 	}
 
 	urlSuffix := "/completions"
-	if c.config.checkAIMode && !checkEndpointSupportsModel(urlSuffix, request.Model) {
+	if c.config.checkAIModel && !checkEndpointSupportsModel(urlSuffix, request.Model) {
 		err = ErrCompletionUnsupportedModel
 		return
 	}

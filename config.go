@@ -39,7 +39,7 @@ type ClientConfig struct {
 	HTTPClient           *http.Client
 
 	EmptyMessagesLimit uint
-	checkAIMode        bool
+	checkAIModel       bool
 }
 
 func DefaultConfig(authToken string) ClientConfig {
@@ -53,7 +53,7 @@ func DefaultConfig(authToken string) ClientConfig {
 		HTTPClient: &http.Client{},
 
 		EmptyMessagesLimit: defaultEmptyMessagesLimit,
-		checkAIMode:        true,
+		checkAIModel:       true,
 	}
 }
 
@@ -71,7 +71,7 @@ func DefaultAzureConfig(apiKey, baseURL string) ClientConfig {
 		HTTPClient: &http.Client{},
 
 		EmptyMessagesLimit: defaultEmptyMessagesLimit,
-		checkAIMode:        true,
+		checkAIModel:       true,
 	}
 }
 
